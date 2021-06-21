@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import {BistroPage} from "../page-bjects/bistro-page";
+import {BistroPage} from "../page-objects/bistro-page";
 
 describe('bistro order', () => {
     const bistroPage = new BistroPage()

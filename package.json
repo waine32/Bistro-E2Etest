@@ -1,0 +1,16 @@
+{
+  "name": "bistro-e2etest",
+  "version": "1.0.0",
+  "description": "E2E test www.bistro.sk/en",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "Martin Žužič ",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^7.5.0"
+  }
+}

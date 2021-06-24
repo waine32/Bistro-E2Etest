@@ -37,12 +37,15 @@ describe('bistro order', () => {
 
     it('pick food', () => {
 
-        bistroPage.navigate('/domased/')
+        // bistroPage.navigate('/pijeme/')
 
-        bistroPage.pickFoodFromMenu(1)
+        bistroPage.pickFoodFromMenu(1, 1)
         bistroPage.enterTheAddress(address)
-        bistroPage.pickFoodFromMenu(2)
-        bistroPage.pickFoodFromMenu(3)
+        bistroPage.checkModalWindow()
+        bistroPage.pickFoodFromMenu(2, 1)
+        bistroPage.checkModalWindow()
+        bistroPage.pickFoodFromMenu(3, 1)
+        bistroPage.checkModalWindow()
         bistroPage.validateItemsInCart(3)
 
     })

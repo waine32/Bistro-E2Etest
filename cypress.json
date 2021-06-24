@@ -2,7 +2,7 @@
     "baseUrl": "https://www.bistro.sk/en",
     "watchForFileChanges": false,
     "viewportWidth": 1280,
-    "viewportHeight":860,
+    "viewportHeight": 1280,
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 6000,
     "execTimeout": 60000,

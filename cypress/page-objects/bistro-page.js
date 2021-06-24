@@ -38,8 +38,8 @@ export class BistroPage {
         cy.get('.cartTitle').should('contain', 'Your order')
     }
 
-    pickFoodFromMenu(orderInMenu) {
-        cy.get(':nth-child(1) > .content-wrapper').eq(orderInMenu - 1).click()
+    pickFoodFromMenu(itemInSection, section) {
+        cy.get(':nth-child('+itemInSection+') > .content-wrapper').eq(section+1).click({force: true})
     }
 
     enterTheAddress(address) {
@@ -49,9 +49,21 @@ export class BistroPage {
             cy.get(':nth-child(1) > .location-results__result').contains(address).click({force: true}) //- Petržalka, Bradáčova 1683/1').click({force: true})
             cy.get('.specification-wrapper__footer--submit').click({force: true})
             
+            cy.wait(1000)
         })
-        cy.get('#cartDataContainer > .items > li')
     }
+
+    checkModalWindow() {
+
+        cy.get('body').then(($body) => {
+            
+            if ($body.find('.modal-window').length) {
+                cy.window().then(win => {
+                    cy.get('.modal-bottom > .button').click() 
+                })
+            }
+        })
+    }    
 
     validateItemsInCart(countOfItems) {
         cy.get('#cart-fixed > .inside').find('.name').should('have.length', countOfItems)
